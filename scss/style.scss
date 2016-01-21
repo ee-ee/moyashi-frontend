@@ -1,0 +1,146 @@
+$h1Color: #033;
+$postBackground:#D6F0E4;
+$postBorderColor: #b6dbdc;
+$linkColor: #345456;
+$omittedColor: #5d5d5d;
+$nameColor:#117743;
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    background:url('/img/armas.jpg');
+    margin:0;
+    margin-top:3rem;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 10pt;
+}
+
+a {
+    color:$linkColor;
+    &:hover {
+        text-decoration:none;
+    }
+}
+
+.boardlist {
+    list-style:none;
+    padding:0;
+    background:$postBackground;
+    position:fixed;
+    top:0;
+    margin:0;
+    width:100vw;
+
+    li {
+        display:inline;
+    }
+
+    a {
+        display:inline-block;
+        padding:2px;
+    }
+}
+
+h1 {
+    text-align:center;
+    color:$h1Color;
+    margin-bottom:2rem;
+}
+
+.thread {
+    float:left;
+    clear:both;
+    margin-left:1rem;
+}
+
+.post {
+    padding:0.5rem;
+    padding-top:0.8rem;
+    padding-left:0;
+    float:left;
+
+    &:not(.reply) {
+        width:100%;
+    }
+
+    &.reply {
+        padding-left:0.8rem;
+        background: $postBackground;
+        border-width: 1px;
+        border-style: none solid solid none;
+        border-color: $postBorderColor;
+        margin-bottom:0.5rem;
+        display:inline-bottom;
+        float:left;
+        clear:both;
+        min-width:300px;
+    }
+
+    a.return {
+        display:inline-block;
+        margin-bottom:0.5rem;
+    }
+
+    p.intro {
+        margin-top:0;
+        margin-bottom:0.5rem;
+    }
+
+    span.name {
+        font-weight:bold;
+        color:$nameColor;
+    }
+
+    time {
+        float:right;
+        color: $omittedColor;
+        font-size:80%;
+    }
+
+    p.omitted {
+        color:$omittedColor;
+        margin-bottom:0;
+        float:left;
+        clear:both;
+    }
+
+    a.viewthread {
+        display:inline-block;
+        margin-top:0.5rem;
+        float:left;
+        clear:both;
+    }
+
+    .files {
+        float:left;
+        margin-right:0.75rem;
+    }
+
+    .body {
+        margin-top:0;
+        margin-bottom:0;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+}
+
+hr {
+    border:1px solid #ccc;
+    border-bottom:0;
+}
+
+.thread:first-of-type hr {
+    display:none;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        margin-top:0;
+    }
+
+    .boardlist {
+        position:static;
+    }
+}
